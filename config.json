@@ -1,0 +1,54 @@
+{
+    "user_agent": "Mozilla/5.0 (compatible; ShellScanner/1.0; Security Scanner)",
+    "risk_threshold": 50,
+    "scan_extensions": ["php", "phtml", "php3", "php4", "php5", "php7", "inc", "html", "htm"],
+    "log_file": "scanner.log",
+    "max_scan_depth": 3,
+    "timeout": 30,
+    "max_redirects": 3,
+    
+    "email": {
+        "enabled": true,
+        "to_email": "security@yourdomain.com",
+        "from_email": "scanner@yourdomain.com",
+        
+        "smtp_host": "",
+        "smtp_port": 587,
+        "smtp_username": "",
+        "smtp_password": "",
+        
+        "send_on_clean": false,
+        "send_on_infected": true,
+        "send_on_error": true
+    },
+    
+    "scanning": {
+        "follow_external_links": false,
+        "scan_images": false,
+        "scan_css": false,
+        "scan_js": true,
+        "check_http_headers": true,
+        "analyze_response_codes": true
+    },
+    
+    "detection": {
+        "case_sensitive": false,
+        "check_base64": true,
+        "check_obfuscation": true,
+        "deep_analysis": true,
+        "whitelist_domains": [],
+        "blacklist_patterns": [
+            "admin/uploads/",
+            "wp-content/uploads/",
+            "temp/",
+            "tmp/"
+        ]
+    },
+    
+    "reporting": {
+        "detailed_reports": true,
+        "include_code_samples": true,
+        "max_sample_length": 200,
+        "export_format": "json"
+    }
+}
